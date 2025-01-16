@@ -1,0 +1,626 @@
+/* Global Styles */
+/* Main body styles with background image */
+body {
+    background: url('img/mountains.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Dark theme background */
+body.dark-theme {
+    background: url('img/dark-theme.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Container Opacity (Light & Dark Theme) */
+.container, .feed, .sidebar, .post, .post-form, .suggestions {
+    background-color: rgba(255, 255, 255, 0.1); /* Light theme default (white with low opacity) */
+    backdrop-filter: blur(1px); /* Adding a blur effect */
+    padding: 20px; /* Increased padding for spacing */
+    margin: 20px auto; /* Adjust margins for better layout */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Max width to avoid stretching on large screens */
+}
+
+/* Dark Theme Styles */
+body.dark-theme .container,
+body.dark-theme .feed,
+body.dark-theme .sidebar,
+body.dark-theme .post,
+body.dark-theme .post-form,
+body.dark-theme .suggestions {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark theme (black with low opacity) */
+    color: #dfd8c9; /* Light text color for dark theme */
+}
+
+/* Ensure post images and videos aren't affected by opacity */
+.post-content img, .post-content video {
+    opacity: 1; /* Full opacity for media */
+    display: block;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* General styles for the header */
+.header {
+    background-color: #8c756a; /* Background color for header */
+    padding: 10px; /* Adds padding around the header */
+}
+
+/* Flex container for the header content */
+.header-content {
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Distributes space between items */
+    align-items: center; /* Aligns items vertically */
+}
+
+/* Styles for the logo */
+.logo {
+    flex: 0 0 auto; /* Do not grow or shrink */
+}
+
+.logo-img {
+    width: 50px; /* Set width for logo */
+    height: 50px; /* Set height for logo */
+    border-radius: 50%; /* Makes the image circular */
+}
+
+/* Title styles */
+.site-title {
+    flex: 1; /* Centered and takes available space */
+    text-align: center; /* Centers the title */
+    font-size: 25px; /* Adjust font size */
+    margin: 0; /* Removes default margin */
+    font-weight: bold;
+    color: #dfd8c9;
+    text-shadow: #735c57 1px;
+}
+
+/* Profile menu styles */
+.profile-menu {
+    flex: 0 0 auto; /* Do not grow or shrink */
+}
+
+.profile-pic img {
+    width: 50px; /* Set size for profile picture */
+    height: 50px; /* Set size for profile picture */
+    border-radius: 50%; /* Makes the image circular */
+}
+
+.profile-menu img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    padding: 20px;
+    margin-bottom: 10px;
+    height: 550px;
+}
+
+.navbar {
+    flex-basis: 20%;
+    background-color: rgba(140, 117, 106, 0.7);
+    padding: 20px;
+    min-height: 13.5cm;
+    position: fixed;
+    border-radius: 10px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex; /* Ensures the list items are laid out in a row */
+    justify-content: space-between; /* Evenly distribute space between items */
+    padding: 0;
+    flex-direction: column;
+
+}
+
+.navbar li {
+    margin-bottom: 20px;
+}
+
+.navbar li a {
+    color: #dfd8c9;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.navbar li a i {
+    margin-right: 8px;
+}
+
+.feed {
+    flex-basis: 55%;
+    margin-left: 9%;
+    margin-bottom: 100px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    transition: margin-left 0.3s;
+    overflow-y: auto; /* Enable scrolling */
+    height: 13.5cm; /* Adjust height similarly */
+}
+
+.feed h1 {
+    font-size: 24px;
+    color: #8c756a;
+}
+
+.post {
+    background-color: rgba(140, 117, 106, 0.3);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+
+/* Post media styling */
+.post-media {
+    width: 100%; /* Full width within the post */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Maximum width */
+    max-height: 400px; /* Maximum height */
+    object-fit: cover; /* Ensure media covers the entire area without distortion */
+    margin-bottom: 15px; /* Space between media and content */
+    border-radius: 10px; /* Smooth border for media */
+}
+
+/* Post actions section */
+.post-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between action buttons */
+    margin-top: 10px;
+}
+/* Like button styling */
+.like-btn {
+    background-color: #8c756a; /* Default background color */
+    color: #dfd8c9; /* Icon color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded button */
+    padding: 8px; /* Button padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: inline-flex; /* Make button inline and flex to align icon */
+    align-items: center; /* Align icon vertically center */
+}
+
+.like-btn:hover {
+    background-color: #dfd8c9; /* Change background on hover */
+}
+
+.like-btn i {
+    font-size: 16px; /* Icon size */
+}
+
+/* Like count styling */
+.like-count {
+    margin-left: 10px; /* Add space between the button and like count */
+    font-size: 0.9em; /* Font size for like count */
+    color: #333; /* Color for the like count */
+}
+
+
+/* Comment button styling */
+.comment-btn {
+    background-color: #8c756a; /* Same background as like button */
+    color: #dfd8c9;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.comment-btn:hover {
+    background-color: #dfd8c9; /* Hover effect */
+}
+
+.comment-btn i {
+    margin-right: 5px;
+}
+
+.user-info-post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-info-post .profile-menu {
+    margin-right: 10px; /* Space between profile picture and user details */
+}
+
+.user-info-post .profile-pic {
+    width: 50px; /* Adjust size as per your design */
+    height: 50px;
+    border-radius: 50%; /* Circle profile picture */
+    overflow: hidden;
+}
+
+.user-info-post .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info-post .user-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.8;
+}
+
+.user-info-post .user-details strong {
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold;
+    color: #333; /* Adjust text color */
+}
+
+.user-info-post .user-details small {
+    font-size: 14px; /* Adjust font size */
+    color: #777; /* Subtle color for username */
+}
+
+.sidebar {
+    flex-basis: 25%;
+    background-color: rgba(140, 117, 106, 0.7);
+    padding: 20px;
+    margin-left: 10px;
+    height: 13.5cm;
+}
+
+.suggestions {
+    margin-top: 20px;
+    max-height:9.5cm;
+}
+
+.suggestions li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.suggestions li:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.suggestions .close-btn {
+    display: none;
+    cursor: pointer;
+}
+
+.suggestions li:hover .close-btn {
+    display: inline;
+}
+
+/* Comment Section */
+.comment-section {
+    display: none;
+    background-color: rgba(140, 117, 106, 0.5);
+    padding: 10px;
+    margin-top: 10px;
+
+    .form textarea{
+        border: 1px solid #8c756a;
+        border-radius: 5px;
+    }
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Theme Switching */
+body.dark-theme .feed, 
+body.dark-theme .sidebar, 
+body.dark-theme .navbar, 
+body.dark-theme .post {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.light-theme .feed, 
+body.light-theme .sidebar, 
+body.light-theme .navbar, 
+body.light-theme .post {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Theme Switching */
+body.dark-theme .feed, 
+body.dark-theme .sidebar, 
+body.dark-theme .navbar, 
+body.dark-theme .post {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body.light-theme .feed, 
+body.light-theme .sidebar, 
+body.light-theme .navbar, 
+body.light-theme .post {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .navbar {
+        flex-basis: auto;
+        position: static;
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 0;
+    }
+
+    .feed, .sidebar {
+        flex-basis: 100%;
+        margin: 0;
+        padding: 15px;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feed {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .post {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .profile-menu img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .navbar, .feed, .sidebar {
+        padding: 10px;
+    }
+
+    .navbar li {
+        margin-bottom: 10px;
+    }
+
+    .feed h1 {
+        font-size: 18px;
+    }
+}
+
+.link-button {
+    background: none;
+    border: 2px solid #8c756a;
+    border-radius: 0 25px 25px 0;
+    padding: 10px 20px;
+    font: inherit;
+    cursor: pointer;
+    color: #dfd8c9;
+    text-decoration: none;
+}
+
+.user-search{
+    border-radius: 30%;
+}
+
+.search-bar input {
+        width: 220px;
+        padding: 10px 20px;
+        border-radius: 25px 0 0 25px;  /* Rounded corners on the left */        
+        border: 2px solid #8c756a;     /* Border matching font color */
+        outline: none;
+        font-size: 16px;
+        color: #333;
+        background-color: #dfd8c9;     /* Background matching logo */
+}
+
+.search-bar:hover{
+    border-color: rgba(140, 117, 106, 0.8);
+}
+
+li {
+    list-style-type: none;
+}
+
+
+.user-box {
+    width: 350px;
+    background-color: #8c756a;
+    opacity: 0.8;
+    color: #dfd8c9;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Align image and text vertically */
+}
+
+.user-box img {
+    width: 60px;
+    opacity: 1;
+    height: 60px; /* Ensure image is square for round shape */
+    border-radius: 50%; /* Fully rounded corners */
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    padding-left: 20px;
+}
+
+.user-info a {
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
+
+.user-info p {
+    color: #dfd8c9;
+    margin-top: 5px; /* Add some space between <a> and <p> */
+}
+
+/* Styling for the Post Form */
+.post-form {
+    max-width: 600px;
+    margin: 20px auto; /* Center the form horizontally */
+    background-color: rgba(223, 216, 201, 0.8); /* Theme color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex-direction: column;
+}
+
+.post-form h2 {
+    font-size: 24px;
+    color: #8c756a;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Align the form elements horizontally */
+.post-form form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* Add space between items */
+}
+
+.post-form textarea {
+    flex-grow: 2;
+    border: 2px solid #8c756a;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+    color: #333;
+    min-height: 50px;
+}
+
+/* File upload section */
+.file-upload {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload input[type="file"] {
+    display: none;
+}
+
+.file-upload-button {
+    background-color: #8c756a;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-upload-button:hover {
+    background-color: #735c57;
+}
+
+/* Submit button */
+.post-form button[type="submit"] {
+    background-color: #8c756a;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background-color: #735c57;
+}
+
+/* Ensure form is responsive */
+@media screen and (max-width: 768px) {
+    .post-form form {
+        flex-direction: column;
+    }
+
+    .post-form textarea,
+    .post-form .file-upload-button,
+    .post-form button[type="submit"] {
+        width: 100%; /* Make elements stack vertically on smaller screens */
+    }
+
+    .post-form .file-upload-button {
+        margin-top: 10px;
+    }
+
+    button[type="submit"] {
+        margin-top: 10px;
+    }
+}
+
+/*
+.file-upload {
+ position: relative;
+ overflow: hidden;
+ display: block;
+}
+
+.file-upload input[type="file"] {
+    position:absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload-button {
+    background-color: #8c756a, 0.2;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-upload-button:hover {
+    background-color: #f0f0f0;
+}
+*/

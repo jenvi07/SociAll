@@ -1,0 +1,10 @@
+body {
+    background-color: #121212;
+    color: white;
+}
+.container {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #333;
+}
+/* Additional dark theme styles */
